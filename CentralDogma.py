@@ -43,7 +43,7 @@ seq_dna = {}
 
 for record in SeqIO.parse(fasta_dna, "fasta"):
     seq_dna[record.id] = str(record.seq)
-# print(seq_dna)
+print(seq_dna)
 
 ##SEQUENCES IN THIS DICTIONARY ARE ACCEPTED AS CODING STRAND.##
 
@@ -57,7 +57,7 @@ new_seq_dna = {}
 for order, dna_strings in enumerate(keynames):
     dna = seq_dna[dna_strings]
     order = order + 1
-    new_name = f"seq_{order}_{len(dna)}"
+    new_name = f"seq_{order}_len{len(dna)}"
     new_seq_dna[new_name] = dna
 
 seq_dna = new_seq_dna
@@ -66,7 +66,6 @@ print(seq_dna)
 ## FREQUENCY OF NUCLEOTIDES ##
 
 frequency_nuc = {}
-freq_nuc = []
 for key, dna in seq_dna.items():
     freq_a = round(dna.count('A')/len(dna), 2)
     freq_t = round(dna.count('T')/len(dna), 2)
@@ -159,10 +158,10 @@ overall_data = {'ID' : list(seq_dna.keys()),
                 'Coding Strand' : list(seq_dna.values()),
                 'Nucleotide Frequency' : list(frequency_nuc.values()),
                 'Codon Sequences' : list(seq_rna.values()),
-                'Amino Acid' : list(seq_aa.values())
+                'Amino Acid Sequences' : list(seq_aa.values())
 }
 df = pd.DataFrame(overall_data)
+print(df)
+# styled = df.style.background_gradient(cmap="viridis")
+# styled.to_html("table.html")
 
-styled = df.style.background_gradient(cmap="viridis")
-styled.to_html("table.html")
-print(df) #deneme
