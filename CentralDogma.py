@@ -50,7 +50,7 @@ for record in SeqIO.parse(fasta_dna, "fasta"):
 # keys_list = list(seq_dna.keys())
 # print(keys_list)   #Pulling the key names from the dictionary (Names are incorrect)
 
-## NEW SEQUENCE NAMES ##
+## CORRECTING SEQUENCE NAMES ##
 
 keynames = list(seq_dna.keys())
 new_seq_dna = {}
@@ -72,14 +72,10 @@ for key, dna in seq_dna.items():
     freq_t = round(dna.count('T')/len(dna), 2)
     freq_g = round(dna.count('G')/len(dna), 2)
     freq_c = round(dna.count('C')/len(dna), 2)
-    GC_Content = freq_g + freq_c
+    GC_Content =  freq_g + freq_c
     keynames = key
-    ##FIRST WAY TO CREATE FREQUENCY DICTIONARY
-    frequency_nuc[key] = freq_a, freq_t, freq_g, freq_c
-    # ##SECOND WAY
-    # freq_nuc = freq_a, freq_t, freq_g, freq_c
-    # frequency_nuc[key] = freq_nuc
-    #print(f"{keynames}: Frequency of nucleotides : A = {freq_a:.2f} / T = {freq_t:.2f} / G = {freq_g:.2f} / C = {freq_c:.2f}")
+    frequency_nuc[key] = f"A:{freq_a:.2f} T:{freq_t:.2f} G:{freq_g:.2f} C:{freq_c:.2f} GC:{GC_Content:.2f}"
+
 
 print(frequency_nuc)
 
