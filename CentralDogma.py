@@ -1,5 +1,4 @@
 ## TO EVALUATE DICTIONARY CONCEPTS ##
-from turtledemo.forest import symRandom
 
 # seq_dna            # dictionary
 # seq_dna.keys()     # only keys
@@ -169,6 +168,4 @@ df = pd.DataFrame(overall_data)
 
 styled = df.style.background_gradient(cmap="viridis")
 styled.to_html("table.html")
-print(df)
-
-
+print(df) #deneme
