@@ -72,6 +72,7 @@ for key, dna in seq_dna.items():
     freq_t = round(dna.count('T')/len(dna), 2)
     freq_g = round(dna.count('G')/len(dna), 2)
     freq_c = round(dna.count('C')/len(dna), 2)
+    GC_Content = freq_g + freq_c
     keynames = key
     ##FIRST WAY TO CREATE FREQUENCY DICTIONARY
     frequency_nuc[key] = freq_a, freq_t, freq_g, freq_c
