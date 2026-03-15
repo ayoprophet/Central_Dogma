@@ -168,6 +168,4 @@ df = pd.DataFrame(overall_data)
 
 styled = df.style.background_gradient(cmap="viridis")
 styled.to_html("table.html")
-print(df)
-
-
+print(df) #deneme
