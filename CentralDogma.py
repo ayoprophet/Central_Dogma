@@ -1,5 +1,4 @@
 ## TO EVALUATE DICTIONARY CONCEPTS ##
-from turtledemo.forest import symRandom
 
 # seq_dna            # dictionary
 # seq_dna.keys()     # only keys
